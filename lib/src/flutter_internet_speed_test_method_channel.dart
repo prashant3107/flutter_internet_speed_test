@@ -102,9 +102,10 @@ class MethodChannelFlutterInternetSpeedTest
               _logger.d('onError : ${call.arguments["speedTestError"]}');
               _logger.d('onError : ${call.arguments["errorMessage"]}');
             }
-            callbacksById[call.arguments["id"]]!.item1(
-                call.arguments['errorMessage'],
-                call.arguments['speedTestError']);
+            callbacksById[call.arguments["id"]]!.item4();
+            // callbacksById[call.arguments["id"]]!.item1(
+            //     call.arguments['errorMessage'],
+            //     call.arguments['speedTestError']);
           } else if (call.arguments['type'] == ListenerEnum.progress.index) {
             double rate = (call.arguments['transferRate'] ~/ 1000).toDouble();
             if (isLogEnabled) {
